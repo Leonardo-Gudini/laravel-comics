@@ -14,5 +14,30 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    $navList = [
+        'characters',
+        'comics',
+        'movies',
+        'tv',
+        'games',
+        'collectibles',
+        'videos',
+        'fans',
+        'news',
+        'shop',
+    ];
+
+    return view('homepage', ['listaNav' => $navList]);
+})->name('header');
+
+
+
+Route::get('/main', function () {
+
+    $fumetti = config('comics');
+
+    return view('main', ['listaFumetti' => $fumetti]);
+    
+})->name('main');
+
+
