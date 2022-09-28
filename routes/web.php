@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
 Route::get('/', function () {
     $navList = [
         'characters',
@@ -31,12 +32,11 @@ Route::get('/', function () {
 })->name('header');
 
 
-
-Route::get('/main', function () {
+Route::get('/', function () {
 
     $fumetti = config('comics');
 
-    return view('main', ['listaFumetti' => $fumetti]);
+    return view('homepage', ['listaFumetti' => $fumetti]);
     
 })->name('main');
 

@@ -10,9 +10,9 @@
 <body>
 
     @include('header')
-    
+
     <main>
-        @yield('fumetti')
+    @yield('fumetti')
     </main>
 
     @include('footer')
